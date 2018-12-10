@@ -1,0 +1,65 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        // Gradle 4.1 and higher include support for Google's Maven repo using
+        // the google() method. And you need to include this repo to download
+        // Android Gradle plugin 3.0.0 or higher.
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    /**
+     * buildToolsVersion specifies the version of the SDK build tools, command-line
+     * utilities, and compiler that Gradle should use to build your app. You need to
+     * download the build tools using the SDK Manager.
+     *
+     * If you're using Android plugin 3.0.0 or higher, this property is optional—
+     * the plugin uses the minimum required version of the build tools by default.
+     */
+    //buildToolsVersion = '27.0.0'
+
+    /**
+     * compileSdkVersion specifies the Android API level Gradle should use to compile your app. This
+     * means your app can use the API features included in this API level and lower. Changing your
+     * compileSdkVersion does not change runtime behavior so always compile with the latest SDK.
+     */
+    compileSdkVersion = 28
+
+    /**
+     * The minimum version that is able to run this software.
+     */
+    minSdkVersion = 14
+
+    /**
+     * This is the main way Android provides forward compatibility (by not applying behavior changes
+     * unless the targetSdkVersion is updated).
+     */
+    targetSdkVersion = 28
+
+    /**
+     * supportLibraryVersion 28.0.0 requires minSdkVersion 14
+     */
+    supportLibraryVersion = '28.0.0'
+}
